@@ -1,0 +1,18 @@
+{#
+ # Alert component
+ #
+ # @param {string} type - The alert type (info, warning, or error)
+ # @param {string} message - The alert message
+ #}
+<div class="alert alert--{{ type|default('info') }}" role="alert">
+  <div class="alert__content">
+    {% if type == 'info' %}
+      <span class="alert__icon">ℹ️</span>
+    {% elseif type == 'warning' %}
+      <span class="alert__icon">⚠️</span>
+    {% elseif type == 'error' %}
+      <span class="alert__icon">❌</span>
+    {% endif %}
+    <span class="alert__message">{{ message }}</span>
+  </div>
+</div>

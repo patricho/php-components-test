@@ -1,0 +1,42 @@
+{#
+ # Advanced Alert component
+ #
+ # @param {string} type - The alert type (info, warning, error, success)
+ # @param {string} message - The alert message
+ # @param {string} title - Optional title for the alert
+ # @param {boolean} dismissible - Whether the alert can be dismissed
+ # @param {boolean} icon - Whether to show an icon
+ #}
+<div class="alert alert--{{ type|default('info') }} {% if dismissible %}alert--dismissible{% endif %}" role="alert">
+  <div class="alert__content">
+    {% if icon is not defined or icon %}
+      <div class="alert__icon">
+        {% if type == 'info' %}
+          <span class="alert__icon-info">ℹ️</span>
+        {% elseif type == 'warning' %}
+          <span class="alert__icon-warning">⚠️</span>
+        {% elseif type == 'error' %}
+          <span class="alert__icon-error">❌</span>
+        {% elseif type == 'success' %}
+          <span class="alert__icon-success">✅</span>
+        {% endif %}
+      </div>
+    {% endif %}
+    
+    <div class="alert__text">
+      {% if title %}
+        <h4 class="alert__title">{{ title }}</h4>
+      {% endif %}
+      
+      <div class="alert__message">
+        {{ message }}
+      </div>
+    </div>
+  </div>
+  
+  {% if dismissible %}
+    <button type="button" class="alert__dismiss" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  {% endif %}
+</div>

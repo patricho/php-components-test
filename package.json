@@ -1,0 +1,29 @@
+{
+  "name": "minso-twig-components",
+  "version": "0.1.0",
+  "description": "Twig components library for PHP sites",
+  "main": "index.js",
+  "scripts": {
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "generate-templates-js": "node scripts/generate-templates.js",
+    "generate-templates-js-v2": "node scripts/generate-templates-v2.js",
+    "generate-templates": "php scripts/generate-templates.php"
+  },
+  "dependencies": {
+    "twig": "^1.16.0"
+  },
+  "devDependencies": {
+    "@storybook/addon-essentials": "^7.6.10",
+    "@storybook/addon-interactions": "^7.6.10",
+    "@storybook/addon-links": "^7.6.10",
+    "@storybook/blocks": "^7.6.10",
+    "@storybook/html": "^7.6.10",
+    "@storybook/html-webpack5": "^7.6.10",
+    "@storybook/test": "^7.6.10",
+    "raw-loader": "^4.0.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "storybook": "^7.6.10"
+  }
+}
